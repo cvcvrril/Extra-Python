@@ -1,7 +1,8 @@
 '''
-Como usar matplotlib
+MATPLOTLIB
 
     INSTALACIÓN
+    -----------
 
     La instalación es muy sencilla en estos equipos, escribimos lo siguiente en la terminal:
 
@@ -11,17 +12,54 @@ Como usar matplotlib
 
 '''
 
+'''
+    USO DE LA LIBRERÍA
+    -----------
+    Importamos de esta forma la librería matplotlib (lo encontramos en la página del tutorial).
+
+'''
+
 import matplotlib.pyplot as plt
 import numpy as np
 
-fig, ax = plt.subplots()
-ax.plot([1,2,3,4], [1,4,2,3])
-plt.show()
+'''
+
+Varios tipos de gráficos: Pairwise, Statistical distributions, Gridded data, Irregularly gridded data, 3d.
+En este corto tutorial me voy a centrar en los de tipo Pairwise, Statistical y Gridded.
+
+'''
+
+def ejemplo_plot_sencillo():
+    fig, ax = plt.subplots()            #definimos la figura (fig) y los ejes (ax)
+    ax.plot([1,2,3,4], [1,4,2,3])       #primera línea; primer array marca las x's, segundo array marca las y's
+    ax.plot([1,2,5], [2,4,3], 'ro')     #segunda línea, le hemos establecido que sustituya la línea por puntos
+    plt.title('Ejemplo Plot Sencillo')  #el título del gráfico
+    plt.ylabel('y')                     #de esta forma establecemos un texto en el eje y
+    plt.xlabel('x')                     #de esta forma establecemos un texto en el eje x
+    plt.show()                          #llamamos a la función show, que se encargará de enseñar el gráfico generado
+
+
+def ejemplo_scatter_sencillo():
+    fig, ax = plt.subplots()
+
+
 
 
 '''
-Referencias:
+
+EJECUCIONES
+-----------
+
+'''
+
+ejemplo_plot_sencillo()
+
+'''
+REFERENCIAS
+-----------
 
 https://matplotlib.org/stable/users/explain/quick_start.html
+https://matplotlib.org/stable/plot_types/index.html
+https://matplotlib.org/stable/tutorials/pyplot.html#sphx-glr-tutorials-pyplot-py
 
 '''
