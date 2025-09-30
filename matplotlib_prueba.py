@@ -44,10 +44,10 @@ def ejemplo_scatter_sencillo():
     np.random.seed(3)                                           #generamos una semilla random
     x = 4 + np.random.normal(0, 2, 24)                          #vamos a generar 24 valores random para x
     y = 4 + np.random.normal(0, 2, len(x))                      #vamos a generar 
-    sizes = 10
-    colors = 'b'
-    fig, ax = plt.subplots()
-    ax.scatter(x,y,s = sizes, c = colors, vmin=0, vmax=100)
+    sizes = 10                                                  #establecemos que el tamaño de las bolitas sea 10
+    colors = 'b'                                                #establecemos que el color de las bolitas sea el azul
+    fig, ax = plt.subplots()                                    #definimos la figura (fig) y los ejes (ax)
+    ax.scatter(x,y,s = sizes, c = colors, vmin=0, vmax=100)     #establecemos que los ejes 
     ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
        ylim=(0, 8), yticks=np.arange(1, 8))
     plt.show()
@@ -56,17 +56,25 @@ def ejemplo_scatter_sencillo():
 def ejemplo_bar_sencillo():
     x = 0.5 + np.arange(8)
     y = [4.8, 5.5, 3.5, 4.6, 6.5, 6.6, 2.6, 3.0]
-
-    # plot
     fig, ax = plt.subplots()
-
     ax.bar(x, y, width=1, edgecolor="white", linewidth=0.7)
-
     ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
        ylim=(0, 8), yticks=np.arange(1, 8))
-
     plt.show()
 
+def ejemplo_hist_sencillo():
+    np.random.seed(1)
+    x = 4 + np.random.normal(0, 1.5, 200)
+
+    # plot:
+    fig, ax = plt.subplots()
+
+    ax.hist(x, bins=8, linewidth=0.5, edgecolor="white")
+
+    ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+        ylim=(0, 56), yticks=np.linspace(0, 56, 9))
+
+plt.show()
 
 '''
 
@@ -76,15 +84,16 @@ EJECUCIONES
 '''
 
 #ejemplo_plot_sencillo()
-#ejemplo_scatter_sencillo()
-ejemplo_bar_sencillo()
+ejemplo_scatter_sencillo()
+#ejemplo_bar_sencillo()
+#ejemplo_hist_sencillo()
 
 '''
 REFERENCIAS
 -----------
 
-https://matplotlib.org/stable/users/explain/quick_start.html
-https://matplotlib.org/stable/plot_types/index.html
-https://matplotlib.org/stable/tutorials/pyplot.html#sphx-glr-tutorials-pyplot-py
+Primeros pasos: https://matplotlib.org/stable/users/explain/quick_start.html
+Tipos de gráficos: https://matplotlib.org/stable/plot_types/index.html
+Tutorial pyplot: https://matplotlib.org/stable/tutorials/pyplot.html#sphx-glr-tutorials-pyplot-py
 
 '''
