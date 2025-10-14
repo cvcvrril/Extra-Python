@@ -30,6 +30,13 @@ En este corto tutorial me voy a centrar en los de tipo Pairwise, Statistical y G
 
 '''
 
+def ejemplo_basico():
+    plt.plot([1, 2, 3, 4])                                              #se proporciona una secuencia de valores en y, las x se establecen solas (1 array)
+    plt.ylabel('eje y')                                                 #de esta forma establecemos un texto en el eje y
+    plt.xlabel('eje x')                                                 #de esta forma establecemos un texto en el eje x
+    plt.show()                                                          #llamamos a la función show(), que se encargará de enseñar el gráfico generado
+
+
 def ejemplo_plot_sencillo():
     fig, ax = plt.subplots()                                            #definimos la figura (fig) y los ejes (ax)
     ax.plot([1,2,3,4], [1,4,2,3])                                       #primera línea; primer array marca las x's, segundo array marca las y's
@@ -88,11 +95,12 @@ EJECUCIONES
 
 '''
 
+ejemplo_basico()
 #ejemplo_plot_sencillo()
 #ejemplo_scatter_sencillo()
 #ejemplo_bar_sencillo()
 #ejemplo_hist_sencillo()
-ejemplo_pie_sencillo()
+#ejemplo_pie_sencillo()
 
 '''
 REFERENCIAS
